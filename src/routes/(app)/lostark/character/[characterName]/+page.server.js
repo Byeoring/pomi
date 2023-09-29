@@ -1,9 +1,10 @@
 import { SECRET_API_KEY } from '$env/static/private';
 import { PUBLIC_API_URL } from '$env/static/public';
+import {page} from "$app/stores";
 
 export const load = async (/** @type {{ fetch: any; }} */ loadEvent) => {
     const { fetch } = loadEvent;
-    const url = PUBLIC_API_URL + '/언노님' + '/siblings';
+    const url = PUBLIC_API_URL + '/민엉만지는투영땔다쿤' + '/siblings';
     const response = await fetch(url, {
         headers: {
             'Accept': 'application/json',
@@ -11,12 +12,8 @@ export const load = async (/** @type {{ fetch: any; }} */ loadEvent) => {
         }
     });
     const characters = await response.json();
+    characters.sort((/** @type {{ ItemAvgLevel: string; }} */ a, /** @type {{ ItemAvgLevel: string; }} */ b) => b.ItemAvgLevel.localeCompare(a.ItemAvgLevel));
 
-    characters.sort((/** @type {{ ServerName: string; ItemAvgLevel: string; }} */ a, /** @type {{ ServerName: any; ItemAvgLevel: string; }} */ b) =>
-                        b.ServerName.localeCompare(a.ServerName) || parseFloat(b.ItemAvgLevel.replace(",", "")) - parseFloat(a.ItemAvgLevel.replace(",", ""))
-    );
-
-    console.log(characters);
     return {
         characters
     };

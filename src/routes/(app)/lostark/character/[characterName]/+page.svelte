@@ -5,7 +5,8 @@
     const { characters } = data;
     const imageUrl = "/src/lib/assets/images/";
 </script>
-<div class="container overflow-auto flex flex-col items-center justify-center w-full mx-auto">
+
+<div class="container flex flex-col items-center justify-center w-full mx-auto">
     <div class="flex flex-col w-full px-4 py-5 mb-2 bg-white border rounded-md shadow sm:px-6 dark:bg-gray-800">
         <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-white">
             User database
