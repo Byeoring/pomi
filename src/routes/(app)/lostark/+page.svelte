@@ -1,41 +1,70 @@
 <script>
-    import {page} from "$app/stores";
-
-    export let data;
-    const { characters } = data;
-    const imageUrl = "/src/lib/assets/images/";
 </script>
-<div class="container overflow-auto flex flex-col items-center justify-center w-full mx-auto">
-    <div class="flex flex-col w-full px-4 py-5 mb-2 bg-white border rounded-md shadow sm:px-6 dark:bg-gray-800">
-        <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-white">
-            User database
-        </h3>
-        <p class="max-w-2xl mt-1 text-sm text-gray-500 dark:text-gray-200">
-            Details and informations about user.
-        </p>
-    </div>
-    <div class="grid gap-3 p-3 sm:grid-cols-2">
-        {#each characters as character}
-            <div class="flex flex-row rounded-md mb-2 {decodeURI($page.url.pathname).indexOf(character.CharacterName) > 0 ? 'border-l-2 border-pink-300' : 'border-l-2 border-pink-100'}">
-                <a href="/lostark/character/{character.CharacterName}" class="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
-                    <div class="flex flex-col items-center justify-center w-10 h-10 mr-4">
-                        <div class="relative block">
-                            <img alt="{ character.CharacterClassName }" src="{imageUrl}{character.CharacterClassName}.png" class="mx-auto object-cover rounded-full h-10 w-10 "/>
-                        </div>
+
+<div class="w-full sm:w-1/2 xl:w-1/3">
+    <div class="mb-4">
+        <div class="w-full p-4 bg-white shadow-lg rounded-2xl dark:bg-gray-700">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center">
+                    <span class="relative p-2 bg-blue-100 rounded-xl">
+                        각인
+                    </span>
+                    <div class="flex flex-col">
+                    <span class="ml-2 font-bold text-black text-md dark:text-white">
+                        각인 최적화
+                    </span>
+                    <span class="ml-2 text-sm text-gray-500 dark:text-white">
+                        각인을 가장 저렴하게 맞추기
+                    </span>
                     </div>
-                    <div class="flex-1 pl-1 md:mr-16">
-                        <div class="font-medium dark:text-white">
-                            { character.CharacterName }
-                        </div>
-                        <div class="text-sm text-gray-600 dark:text-gray-200">
-                            { character.CharacterClassName } | { character.ItemAvgLevel.replace(",", "") }
-                        </div>
-                    </div>
-                    <div class="text-xs text-gray-600 dark:text-gray-200">
-                        { character.CharacterLevel }
-                    </div>
-                </a>
+                </div>
+                <div class="flex items-center">
+                    <button class="p-1 border border-gray-200 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 1792 1792">
+                            <path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                            </path>
+                        </svg>
+                    </button>
+                    <button class="text-gray-200">
+                        <svg width="25" height="25" fill="currentColor" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1088 1248v192q0 40-28 68t-68 28h-192q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h192q40 0 68 28t28 68zm0-512v192q0 40-28 68t-68 28h-192q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h192q40 0 68 28t28 68zm0-512v192q0 40-28 68t-68 28h-192q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h192q40 0 68 28t28 68z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
             </div>
-        {/each}
+        </div>
+    </div><div class="mb-4">
+        <div class="w-full p-4 bg-white shadow-lg rounded-2xl dark:bg-gray-700">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center">
+                    <span class="relative p-2 bg-blue-100 rounded-xl">
+                        각인
+                    </span>
+                    <div class="flex flex-col">
+                    <span class="ml-2 font-bold text-black text-md dark:text-white">
+                        각인 최적화
+                    </span>
+                    <span class="ml-2 text-sm text-gray-500 dark:text-white">
+                        각인을 가장 저렴하게 맞추기
+                    </span>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button class="p-1 border border-gray-200 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 1792 1792">
+                            <path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                            </path>
+                        </svg>
+                    </button>
+                    <button class="text-gray-200">
+                        <svg width="25" height="25" fill="currentColor" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1088 1248v192q0 40-28 68t-68 28h-192q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h192q40 0 68 28t28 68zm0-512v192q0 40-28 68t-68 28h-192q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h192q40 0 68 28t28 68zm0-512v192q0 40-28 68t-68 28h-192q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h192q40 0 68 28t28 68z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
