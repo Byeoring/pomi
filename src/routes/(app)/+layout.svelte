@@ -95,7 +95,9 @@
                                     <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z">
                                     </path>
                                 </svg>
+                                <!-- 검색바 input -->
                                 <input bind:value={characterName} on:keyup={(e) => searchCharacter(e)} type="search" name="search" class="block w-96 py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink-200 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input" placeholder="캐릭터 검색"/>
+                                <!-- 검색바 input 끝 -->
                             </div>
                         </div>
                         <div class="relative flex items-center justify-end w-1/4 p-1 ml-5 mr-4 sm:mr-0 sm:right-auto">
